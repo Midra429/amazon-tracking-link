@@ -1,7 +1,7 @@
 {
   "name": "amazon-tracking-link",
   "displayName": "Amazon Tracking Link",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Amazon.co.jpの配送状況のトラッキングIDを配送業者の追跡ページのリンクにする拡張機能",
   "author": "Midra <me@midra.me> (https://github.com/Midra429)",
   "license": "MIT",
