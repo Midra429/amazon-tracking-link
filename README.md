@@ -2,7 +2,7 @@
 [![GitHub Release](https://img.shields.io/github/v/release/Midra429/amazon-tracking-link?label=Releases)](https://github.com/Midra429/amazon-tracking-link/releases/latest)
 
 ## 概要
-Amazonの配送状況のトラッキングIDを配送会社の追跡ページのリンクにする拡張機能です。
+Amazon.co.jpの配送状況のトラッキングIDを配送業者の追跡ページのリンクにする拡張機能です。
 
 ---
 
