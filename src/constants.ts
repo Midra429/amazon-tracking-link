@@ -5,11 +5,17 @@ export const DELIVERY_COMPANY_REGEXP = /(?<=\s)[^\s]+$/
 export const TRACKING_ID_REGEXP = /(?<=\s)\d+$/
 
 export const TRACKING_URLS = {
+  /** ヤマト運輸, アートセッティングデリバリー */
   YAMATO: 'https://member.kms.kuronekoyamato.co.jp/parcel/detail?pno=',
+  /** 佐川急便, SGムービング */
   SAGAWA: 'https://k2k.sagawa-exp.co.jp/p/web/okurijosearch.do?okurijoNo=',
+  /** 日本郵便 */
   JAPANPOST:
     'https://trackings.post.japanpost.jp/services/srv/search/direct?locale=ja&reqCodeNo1=',
-  FUKUTSU: 'https://corp.fukutsu.co.jp/situation/tracking_no_hunt/',
+  /** プラスカーゴサービス */
+  PLUS_CS: 'https://www.plus-cs.co.jp/kagu/?jt_cd01=',
+  /** DHL */
+  DHL: 'https://www.dhl.com/jp-ja/home/tracking.html?submit=1&tracking-id=',
 }
 
 export const EXTERNAL_LINK_ICON_SVG =

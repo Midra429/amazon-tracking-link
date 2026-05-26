@@ -10,19 +10,23 @@ import {
 export default defineContentScript({
   matches: ['https://www.amazon.co.jp/gp/your-account/ship-track?*'],
   runAt: 'document_end',
-  main: () => void main(),
+  main,
 })
 
 function getTrackingUrlBase(deliveryCompany: string): string | null {
   switch (deliveryCompany) {
     case 'ヤマト運輸':
+    case 'アートセッティングデリバリー':
       return TRACKING_URLS.YAMATO
     case '佐川急便':
+    case 'SGムービング':
       return TRACKING_URLS.SAGAWA
     case '日本郵便':
       return TRACKING_URLS.JAPANPOST
-    case '福山通運':
-      return TRACKING_URLS.FUKUTSU
+    case 'プラスカーゴサービス':
+      return TRACKING_URLS.PLUS_CS
+    case 'DHL':
+      return TRACKING_URLS.DHL
     default:
       return null
   }
