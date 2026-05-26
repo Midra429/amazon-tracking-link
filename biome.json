@@ -1,0 +1,110 @@
+{
+  "$schema": "https://biomejs.dev/schemas/latest/schema.json",
+
+  "files": {
+    "includes": ["**", "!dist/**/*", "!node_modules/**/*"]
+  },
+
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": false,
+      "correctness": {
+        "noUnusedFunctionParameters": "warn",
+        "noUnusedImports": "warn",
+        "noUnusedLabels": "warn",
+        "noUnusedPrivateClassMembers": "warn",
+        "noUnusedVariables": "warn",
+        "useExhaustiveDependencies": "off"
+      },
+      "performance": {
+        "useTopLevelRegex": "on"
+      },
+      "style": {
+        "useImportType": {
+          "level": "on",
+          "options": {
+            "style": "separatedType"
+          }
+        }
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off"
+      }
+    }
+  },
+
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "recommended": false,
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              { "type": true },
+
+              ":BLANK_LINE:",
+
+              [":NODE:", ":BUN:"],
+
+              ":BLANK_LINE:",
+
+              ["#imports", "wxt", "wxt/**"],
+              [":PACKAGE:", ":PACKAGE_WITH_PROTOCOL:"],
+
+              ":BLANK_LINE:",
+
+              ":ALIAS:",
+
+              ":BLANK_LINE:",
+
+              [":PATH:", "!**/*.json"],
+
+              ":BLANK_LINE:",
+
+              "**/*.json"
+            ],
+            "identifierOrder": "lexicographic"
+          }
+        },
+        "useSortedProperties": "on"
+      }
+    }
+  },
+
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "attributePosition": "auto",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "expand": "auto",
+    "useEditorconfig": true
+  },
+
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "es5",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "attributePosition": "auto"
+    }
+  }
+}

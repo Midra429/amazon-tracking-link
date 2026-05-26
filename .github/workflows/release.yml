@@ -1,0 +1,83 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump_type:
+        description: 'v[major].[minor].[patch]'
+        required: true
+        type: choice
+        default: 'patch'
+        options: [major, minor, patch, none]
+      submit_chrome:
+        description: 'Chrome Web Store'
+        type: boolean
+        default: true
+      submit_firefox:
+        description: 'Firefox Add-ons'
+        type: boolean
+        default: true
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Bunをインストール
+        uses: oven-sh/setup-bun@v2
+
+      - name: Gitのユーザーを設定
+        if: ${{ github.event.inputs.bump_type != 'none' }}
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: バージョンを更新
+        if: ${{ github.event.inputs.bump_type != 'none' }}
+        run: |
+          bunx bumpp ${{ github.event.inputs.bump_type }} --commit "v%s" --yes
+          echo VERSION=$(bun -e "console.log(require('./package.json').version)") >> $GITHUB_ENV
+
+      - name: 拡張機能をビルド
+        run: |
+          bun install --frozen-lockfile
+          bun run zip
+
+      - name: GitHubへリリース
+        if: ${{ github.event.inputs.bump_type != 'none' }}
+        run: |
+          gh release create "v${VERSION}" \
+            ./dist/*-chrome.zip \
+            ./dist/*-firefox.zip \
+            -t "$(cat ./package.json | jq -r '.displayName') v${VERSION}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Chrome Web Storeへ提出
+        if: ${{ github.event.inputs.submit_chrome == 'true' }}
+        run: |
+          bun run wxt submit \
+            --chrome-zip ./dist/*-chrome.zip
+        env:
+          CHROME_EXTENSION_ID: ${{ secrets.CHROME_EXTENSION_ID }}
+          CHROME_CLIENT_ID: ${{ secrets.CHROME_CLIENT_ID }}
+          CHROME_CLIENT_SECRET: ${{ secrets.CHROME_CLIENT_SECRET }}
+          CHROME_REFRESH_TOKEN: ${{ secrets.CHROME_REFRESH_TOKEN }}
+        continue-on-error: true
+
+      - name: Firefox Add-onsへ提出
+        if: ${{ github.event.inputs.submit_firefox == 'true' }}
+        run: |
+          bun run wxt submit \
+            --firefox-zip ./dist/*-firefox.zip \
+            --firefox-sources-zip ./dist/*-sources.zip
+        env:
+          FIREFOX_EXTENSION_ID: ${{ secrets.FIREFOX_EXTENSION_ID }}
+          FIREFOX_JWT_ISSUER: ${{ secrets.FIREFOX_JWT_ISSUER }}
+          FIREFOX_JWT_SECRET: ${{ secrets.FIREFOX_JWT_SECRET }}
+        continue-on-error: true

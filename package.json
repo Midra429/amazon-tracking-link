@@ -1,0 +1,33 @@
+{
+  "name": "amazon-tracking-link",
+  "displayName": "Amazon Tracking Link",
+  "version": "0.0.0",
+  "description": "Amazonの配送状況のトラッキングIDを配送会社の追跡ページのリンクにする拡張機能",
+  "author": "Midra <me@midra.me> (https://github.com/Midra429)",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "pre": "wxt prepare",
+    "dev:chrome": "wxt -b chrome",
+    "dev:firefox": "wxt -b firefox",
+    "build": "conc bun:build:* --max-processes 1",
+    "build:chrome": "wxt build -b chrome",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "conc bun:zip:* --max-processes 1",
+    "zip:chrome": "wxt zip -b chrome",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit --skipLibCheck",
+    "check": "biome check --write"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.15",
+    "@types/bun": "latest",
+    "@types/webextension-polyfill": "^0.12.5",
+    "@wxt-dev/auto-icons": "^1.1.1",
+    "concurrently": "^9.2.1",
+    "wxt": "^0.20.26"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
