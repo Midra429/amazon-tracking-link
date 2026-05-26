@@ -1,5 +1,10 @@
 # <sub><img src="assets/icon.png" width="30px" height="30px"></sub> Amazon Tracking Link
 [![GitHub Release](https://img.shields.io/github/v/release/Midra429/amazon-tracking-link?label=Releases)](https://github.com/Midra429/amazon-tracking-link/releases/latest)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/fnbnieoencnmlipigdjeecaoafaigmdh?label=Chrome%20Web%20Store)](https://chromewebstore.google.com/detail/fnbnieoencnmlipigdjeecaoafaigmdh)
+[![Firefox Add-ons](https://img.shields.io/amo/v/amazon-tracking-link?label=Firefox%20Add-ons)](https://addons.mozilla.org/ja/firefox/addon/amazon-tracking-link/)
+
+[<img src="assets/badges/chrome.png" height="60px">](https://chromewebstore.google.com/detail/fnbnieoencnmlipigdjeecaoafaigmdh)
+[<img src="assets/badges/firefox.png" height="60px">](https://addons.mozilla.org/ja/firefox/addon/amazon-tracking-link/)
 
 ## 概要
 Amazon.co.jpの配送状況のトラッキングIDを配送業者の追跡ページのリンクにする拡張機能です。
