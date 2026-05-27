@@ -9,6 +9,8 @@
 ## 概要
 Amazon.co.jpの配送状況のトラッキングIDを配送業者の追跡ページのリンクにする拡張機能です。
 
+<img src="assets/capture_01.png" width="600px" height="180px" style="object-fit: cover;">
+
 ---
 
 ## 開発
