@@ -1,8 +1,8 @@
 export const GITHUB_URL = 'https://github.com/Midra429/amazon-tracking-link'
 
-export const DELIVERY_COMPANY_REGEXP = /(?<=\s)[^\s]+$/
+export const CARRIER_REGEXP = /(?<=\s)[^\s]+(?=\n|$)/
 
-export const TRACKING_ID_REGEXP = /(?<=\s)\d+$/
+export const TRACKING_ID_REGEXP = /(?<=\s)\d+(?=\n|$)/
 
 export const TRACKING_URLS = {
   /** ヤマト運輸, アートセッティングデリバリー */
