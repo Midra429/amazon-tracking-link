@@ -36,10 +36,6 @@ export default defineConfig({
 
   srcDir: 'src',
   outDir: 'dist',
-  autoIcons: {
-    baseIconPath: '../assets/icon.png',
-    sizes: [512],
-  },
   imports: false,
   modules: ['@wxt-dev/auto-icons'],
 })
