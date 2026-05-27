@@ -42,10 +42,5 @@ export default defineConfig({
     sizes: [512],
   },
   imports: false,
-  vite: () => ({
-    build: {
-      chunkSizeWarningLimit: 1024,
-    },
-  }),
   modules: ['@wxt-dev/auto-icons'],
 })
