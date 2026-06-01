@@ -47,6 +47,7 @@ jobs:
         run: |
           bun install --frozen-lockfile
           bun run zip
+          bun run build:userscript
 
       - name: GitHubへリリース
         if: ${{ github.event.inputs.bump_type != 'none' }}
@@ -54,6 +55,7 @@ jobs:
           gh release create "v${VERSION}" \
             ./dist/*-chrome.zip \
             ./dist/*-firefox.zip \
+            ./dist/*.user.js \
             -t "$(cat ./package.json | jq -r '.displayName') v${VERSION}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {
+      "$ref": "https://json.schemastore.org/package.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "userscript": {
+          "type": "object",
+          "properties": {
+            "namespace": {
+              "type": "string",
+              "description": "The namespace of the script."
+            },
+            "icon": {
+              "type": "string",
+              "description": "The script icon in low res."
+            },
+            "updateURL": {
+              "type": "string",
+              "description": "An update URL for the userscript. Note: a @version tag is required to make update checks work."
+            }
+          },
+          "required": ["namespace", "updateURL"]
+        }
+      },
+      "required": ["userscript"]
+    }
+  ]
+}

@@ -243,3 +243,8 @@ stats.html
 stats-*.json
 .wxt
 web-ext.config.ts
+
+# UserScript
+!dist
+dist/*
+!dist/*.user.js

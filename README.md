@@ -2,6 +2,7 @@
 [![GitHub Release](https://img.shields.io/github/v/release/Midra429/amazon-tracking-link?label=Releases)](https://github.com/Midra429/amazon-tracking-link/releases/latest)
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/fnbnieoencnmlipigdjeecaoafaigmdh?label=Chrome%20Web%20Store)](https://chromewebstore.google.com/detail/fnbnieoencnmlipigdjeecaoafaigmdh)
 [![Firefox Add-ons](https://img.shields.io/amo/v/amazon-tracking-link?label=Firefox%20Add-ons)](https://addons.mozilla.org/ja/firefox/addon/amazon-tracking-link/)
+[![UserScript](https://img.shields.io/github/v/release/Midra429/amazon-tracking-link?label=UserScript)](https://raw.githubusercontent.com/Midra429/amazon-tracking-link/refs/heads/main/dist/amazon-tracking-link.user.js)
 
 [<img src="assets/badges/chrome.png" height="60px">](https://chromewebstore.google.com/detail/fnbnieoencnmlipigdjeecaoafaigmdh)
 [<img src="assets/badges/firefox.png" height="60px">](https://addons.mozilla.org/ja/firefox/addon/amazon-tracking-link/)
@@ -10,6 +11,16 @@
 Amazon.co.jpの配送状況のトラッキングIDを配送業者の追跡ページのリンクにする拡張機能です。
 
 <img src="assets/capture_01.png" width="100%">
+
+## インストール
+### Google Chrome / Chromium
+https://chromewebstore.google.com/detail/fnbnieoencnmlipigdjeecaoafaigmdh
+
+### Firefox
+https://addons.mozilla.org/ja/firefox/addon/amazon-tracking-link/
+
+### UserScript
+https://raw.githubusercontent.com/Midra429/amazon-tracking-link/refs/heads/main/dist/amazon-tracking-link.user.js
 
 ---
 
@@ -33,6 +44,7 @@ bun run dev:firefox
 ```sh
 # dist/chrome-mv3
 # dist/firefox-mv3
+# dist/amazon-tracking-link.user.js
 bun run build
 ```
 ```sh
@@ -42,6 +54,10 @@ bun run build:chrome
 ```sh
 # dist/firefox-mv3
 bun run build:firefox
+```
+```sh
+# dist/amazon-tracking-link.user.js
+bun run build:userscript
 ```
 
 ### 出力 (ZIP)
