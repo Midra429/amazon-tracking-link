@@ -41,6 +41,7 @@ function generateHeader() {
     lines.push('@noframes')
   }
   lines.push(`@updateURL ${userscript.updateURL}`)
+  lines.push(`@downloadURL ${userscript.updateURL}`)
 
   lines.push('==/UserScript==')
 
