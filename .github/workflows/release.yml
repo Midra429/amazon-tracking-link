@@ -47,7 +47,13 @@ jobs:
         run: |
           bun install --frozen-lockfile
           bun run zip
+
+      - name: UserScriptをビルド
+        run: |
           bun run build:userscript
+          git add ./dist/*.user.js
+          git commit -m "UserScript v${VERSION}"
+          git push origin main
 
       - name: GitHubへリリース
         if: ${{ github.event.inputs.bump_type != 'none' }}
