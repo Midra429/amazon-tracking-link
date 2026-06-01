@@ -12,6 +12,7 @@
 // @run-at document-end
 // @noframes
 // @updateURL https://raw.githubusercontent.com/Midra429/amazon-tracking-link/refs/heads/main/dist/amazon-tracking-link.user.js
+// @downloadURL https://raw.githubusercontent.com/Midra429/amazon-tracking-link/refs/heads/main/dist/amazon-tracking-link.user.js
 // ==/UserScript==
 "use strict";
 (function() {
