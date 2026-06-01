@@ -1,6 +1,7 @@
 import { rolldown } from 'rolldown'
 
-import content from '@/entrypoints/content'
+import content from '../src/entrypoints/content'
+import wxtConfig from '../wxt.config'
 
 import {
   author,
@@ -11,8 +12,7 @@ import {
   name,
   userscript,
   version,
-} from '@@/package.json'
-import wxtConfig from '@@/wxt.config'
+} from '../package.json'
 
 function generateHeader() {
   const lines = []
