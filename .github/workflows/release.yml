@@ -53,7 +53,7 @@ jobs:
           bun run build:userscript
           git add ./dist/*.user.js
           git commit -m "UserScript v${VERSION}"
-          git push origin main
+          git push
 
       - name: GitHubへリリース
         if: ${{ github.event.inputs.bump_type != 'none' }}
