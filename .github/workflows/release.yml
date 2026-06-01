@@ -42,11 +42,14 @@ jobs:
           bunx bumpp ${{ github.event.inputs.bump_type }} --commit "v%s" --yes
           echo VERSION=$(bun -e "console.log(require('./package.json').version)") >> $GITHUB_ENV
 
-      - name: 拡張機能をビルド
-        if: ${{ github.event.inputs.bump_type != 'none' || github.event.inputs.submit_chrome == 'true' || github.event.inputs.submit_firefox == 'true' }}
+      - name: 依存関係をインストール
         run: |
           bun install --frozen-lockfile
-          bun run zip
+          bun run pre
+
+      - name: 拡張機能をビルド
+        if: ${{ github.event.inputs.bump_type != 'none' || github.event.inputs.submit_chrome == 'true' || github.event.inputs.submit_firefox == 'true' }}
+        run: bun run zip
 
       - name: UserScriptをビルド
         run: |
