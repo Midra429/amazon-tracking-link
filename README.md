@@ -2,10 +2,12 @@
 [![GitHub Release](https://img.shields.io/github/v/release/Midra429/amazon-tracking-link?label=Releases)](https://github.com/Midra429/amazon-tracking-link/releases/latest)
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/fnbnieoencnmlipigdjeecaoafaigmdh?label=Chrome%20Web%20Store)](https://chromewebstore.google.com/detail/fnbnieoencnmlipigdjeecaoafaigmdh)
 [![Firefox Add-ons](https://img.shields.io/amo/v/amazon-tracking-link?label=Firefox%20Add-ons)](https://addons.mozilla.org/ja/firefox/addon/amazon-tracking-link/)
-[![UserScript](https://img.shields.io/badge/UserScript-Latest-blue)](https://raw.githubusercontent.com/Midra429/amazon-tracking-link/refs/heads/main/dist/amazon-tracking-link.user.js)
+[![UserScript](https://img.shields.io/badge/Greasy%20Fork-red)](https://greasyfork.org/ja/scripts/580708-amazon-tracking-link)
+[![UserScript](https://img.shields.io/badge/UserScript-blue)](https://raw.githubusercontent.com/Midra429/amazon-tracking-link/refs/heads/main/dist/amazon-tracking-link.user.js)
 
 [<img src="assets/badges/chrome.png" height="60px">](https://chromewebstore.google.com/detail/fnbnieoencnmlipigdjeecaoafaigmdh)
 [<img src="assets/badges/firefox.png" height="60px">](https://addons.mozilla.org/ja/firefox/addon/amazon-tracking-link/)
+[<img src="assets/badges/greasyfork.png" height="60px">](https://greasyfork.org/ja/scripts/580708-amazon-tracking-link)
 
 ## 概要
 Amazon.co.jpの配送状況のトラッキングIDを配送業者の追跡ページのリンクにする拡張機能です。
@@ -20,7 +22,11 @@ https://chromewebstore.google.com/detail/fnbnieoencnmlipigdjeecaoafaigmdh
 https://addons.mozilla.org/ja/firefox/addon/amazon-tracking-link/
 
 ### UserScript
+**GitHub**\
 https://raw.githubusercontent.com/Midra429/amazon-tracking-link/refs/heads/main/dist/amazon-tracking-link.user.js
+
+**Greasy Fork**\
+https://greasyfork.org/ja/scripts/580708-amazon-tracking-link
 
 ---
 
