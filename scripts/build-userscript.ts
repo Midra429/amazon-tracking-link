@@ -52,7 +52,7 @@ async function main() {
   const header = generateHeader()
 
   const bundle = await rolldown({
-    input: `${wxtConfig.srcDir ?? '.'}/userscript.ts`,
+    input: `${wxtConfig.srcDir || '.'}/userscript.ts`,
   })
 
   await bundle.write({
