@@ -47,7 +47,7 @@ jobs:
       - name: バージョンを更新
         if: ${{ env.IS_RELEASE == 'true' }}
         run: |
-          bunx bumpp ${{ inputs.bump_type }} -c false -t false -p false -y
+          bunx bumpp ${{ inputs.bump_type }} --no-commit --no-push -y
           echo VERSION=$(bun -e "console.log(require('./package.json').version)") >> $GITHUB_ENV
 
       - name: 拡張機能をビルド
@@ -64,7 +64,6 @@ jobs:
           git add ./package.json
           git add ./dist/*.user.js
           git commit -m "v${VERSION}"
-          git tag -a "v${VERSION}" -m "v${VERSION}"
           git push
           git push --tags
 
