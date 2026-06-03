@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Amazon Tracking Link
 // @namespace https://midra.me/
-// @version 1.0.2
+// @version 1.0.3
 // @description Amazon.co.jpの配送状況のトラッキングIDを配送業者の追跡ページのリンクにする拡張機能
 // @homepage https://github.com/Midra429/amazon-tracking-link
 // @author Midra <me@midra.me> (https://github.com/Midra429)
