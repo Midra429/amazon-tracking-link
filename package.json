@@ -12,11 +12,11 @@
     "pre": "wxt prepare",
     "dev:chrome": "wxt -b chrome",
     "dev:firefox": "wxt -b firefox",
-    "build": "conc bun:build:* --max-processes 1",
+    "build": "bun run --sequential \"build:*\"",
     "build:chrome": "wxt build -b chrome",
     "build:firefox": "wxt build -b firefox",
     "build:userscript": "bun run scripts/build-userscript.ts",
-    "zip": "conc bun:zip:* --max-processes 1",
+    "zip": "bun run --sequential \"zip:*\"",
     "zip:chrome": "wxt zip -b chrome",
     "zip:firefox": "wxt zip -b firefox",
     "compile": "tsc --noEmit --skipLibCheck",
@@ -25,7 +25,6 @@
   "devDependencies": {
     "@biomejs/biome": "^2.4.16",
     "@wxt-dev/auto-icons": "^1.1.1",
-    "concurrently": "^10.0.3",
     "typescript": "^6.0.3",
     "wxt": "^0.20.26"
   },
