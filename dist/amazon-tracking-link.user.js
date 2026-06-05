@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Amazon Tracking Link
 // @namespace https://midra.me/
-// @version 1.0.3
+// @version 1.0.4
 // @description Amazon.co.jpの配送状況のトラッキングIDを配送業者の追跡ページのリンクにする拡張機能
 // @homepage https://github.com/Midra429/amazon-tracking-link
 // @author Midra <me@midra.me> (https://github.com/Midra429)
@@ -32,26 +32,12 @@
 	//#region src/utils/getTrackingUrl.ts
 	function getTrackingUrl(carrier, trackingId) {
 		let baseUrl;
-		switch (carrier) {
-			case "ヤマト運輸":
-			case "アートセッティングデリバリー":
-				baseUrl = TRACKING_URLS.YAMATO;
-				break;
-			case "佐川急便":
-			case "SGムービング":
-				baseUrl = TRACKING_URLS.SAGAWA;
-				break;
-			case "日本郵便":
-				baseUrl = TRACKING_URLS.JAPANPOST;
-				break;
-			case "プラスカーゴサービス":
-				baseUrl = TRACKING_URLS.PLUS_CS;
-				break;
-			case "DHL":
-				baseUrl = TRACKING_URLS.DHL;
-				break;
-			default: return null;
-		}
+		if (carrier.includes("ヤマト運輸") || carrier.includes("アートセッティングデリバリー")) baseUrl = TRACKING_URLS.YAMATO;
+		else if (carrier.includes("佐川急便") || carrier.includes("SGムービング")) baseUrl = TRACKING_URLS.SAGAWA;
+		else if (carrier.includes("日本郵便")) baseUrl = TRACKING_URLS.JAPANPOST;
+		else if (carrier.includes("プラスカーゴサービス")) baseUrl = TRACKING_URLS.PLUS_CS;
+		else if (carrier.includes("DHL")) baseUrl = TRACKING_URLS.DHL;
+		if (!baseUrl) return null;
 		return baseUrl + trackingId;
 	}
 	function main() {
