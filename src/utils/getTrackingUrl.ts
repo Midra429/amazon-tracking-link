@@ -6,32 +6,31 @@ export function getTrackingUrl(
 ): string | null {
   let baseUrl
 
-  switch (carrier) {
-    case 'ヤマト運輸':
-    case 'アートセッティングデリバリー':
-      baseUrl = TRACKING_URLS.YAMATO
-      break
-
-    case '佐川急便':
-    case 'SGムービング':
-      baseUrl = TRACKING_URLS.SAGAWA
-      break
-
-    case '日本郵便':
-      baseUrl = TRACKING_URLS.JAPANPOST
-      break
-
-    case 'プラスカーゴサービス':
-      baseUrl = TRACKING_URLS.PLUS_CS
-      break
-
-    case 'DHL':
-      baseUrl = TRACKING_URLS.DHL
-      break
-
-    default:
-      return null
+  // ヤマト運輸
+  if (
+    carrier.includes('ヤマト運輸') ||
+    carrier.includes('アートセッティングデリバリー')
+  ) {
+    baseUrl = TRACKING_URLS.YAMATO
   }
+  // 佐川急便
+  else if (carrier.includes('佐川急便') || carrier.includes('SGムービング')) {
+    baseUrl = TRACKING_URLS.SAGAWA
+  }
+  // 日本郵便
+  else if (carrier.includes('日本郵便')) {
+    baseUrl = TRACKING_URLS.JAPANPOST
+  }
+  // プラスカーゴサービス
+  else if (carrier.includes('プラスカーゴサービス')) {
+    baseUrl = TRACKING_URLS.PLUS_CS
+  }
+  // DHL
+  else if (carrier.includes('DHL')) {
+    baseUrl = TRACKING_URLS.DHL
+  }
+
+  if (!baseUrl) return null
 
   return baseUrl + trackingId
 }
